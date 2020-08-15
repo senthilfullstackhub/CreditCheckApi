@@ -72,7 +72,7 @@
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<TEntity>> Post(TEntity entity)
+        public async Task<ActionResult<TEntity>> Post([FromBody] TEntity entity)
         {
             if (ModelState.IsValid)
             {

@@ -16,8 +16,8 @@
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Card>().HasData(
-                new Card { Id = new Random().Next(), BankName = "Barclay card", CardType = "Visa", AgeLimit = 18, SalaryMin = 30000.00M, APR = 21.80M, CreatedOn = DateTime.Now, CreatedBy = "SYSTEM" },
-                new Card { Id = new Random().Next(), BankName = "Vanquis Card", CardType = "Visa", AgeLimit = 18, SalaryMin = 1.00M, APR = 34.90M, CreatedOn = DateTime.Now, CreatedBy = "SYSTEM" }
+                new Card { Id = new Random().Next(), BankName = "Barclay", CardType = "Visa", AgeLimit = 18, SalaryMin = 30000.00M, APR = 21.80M, CreatedOn = DateTime.Now, CreatedBy = "SYSTEM" },
+                new Card { Id = new Random().Next(), BankName = "Vanquis", CardType = "Visa", AgeLimit = 18, SalaryMin = 1.00M, APR = 34.90M, CreatedOn = DateTime.Now, CreatedBy = "SYSTEM" }
             );
         }
     }

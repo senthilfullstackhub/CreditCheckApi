@@ -26,7 +26,7 @@ namespace CreditCheck
             services.AddControllers();
             services.AddDbContext<AppDbContext>(o =>
                    o.UseLazyLoadingProxies()
-                   .UseSqlServer(Configuration.GetConnectionString("MyCardDatabase")), ServiceLifetime.Singleton);
+                   .UseSqlServer(Configuration.GetConnectionString("MyCardDatabase")), ServiceLifetime.Scoped);
 
             services.AddScoped<EfCoreCustomerRepository>();
             services.AddScoped<EfCoreCardRepository>();
@@ -56,7 +56,8 @@ namespace CreditCheck
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            
+
+            // MyCardsDb will be created if not exists
             db.Database.EnsureCreated();
             
             app.UseStaticFiles();
