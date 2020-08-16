@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditCheck", "CreditCheck\CreditCheck.csproj", "{99E1BEC3-D8E5-4E95-B31E-B5C63581B50F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCheck.IntegrationTest.API", "CreditCheck.IntegrationTest.API\CreditCheck.IntegrationTest.API.csproj", "{34E34869-F603-4CF2-894D-084CBCBB53F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{99E1BEC3-D8E5-4E95-B31E-B5C63581B50F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99E1BEC3-D8E5-4E95-B31E-B5C63581B50F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99E1BEC3-D8E5-4E95-B31E-B5C63581B50F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E34869-F603-4CF2-894D-084CBCBB53F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E34869-F603-4CF2-894D-084CBCBB53F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E34869-F603-4CF2-894D-084CBCBB53F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E34869-F603-4CF2-894D-084CBCBB53F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

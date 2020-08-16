@@ -26,7 +26,7 @@ namespace CreditCheck
             services.AddControllers();
             services.AddDbContext<AppDbContext>(o =>
                    o.UseLazyLoadingProxies()
-                   .UseSqlServer(Configuration.GetConnectionString("MyCardDatabase")), ServiceLifetime.Scoped);
+                   .UseSqlServer(Configuration.GetConnectionString("MyCardDatabase")?? "Server=(localdb)\\MSSQLLocalDB;database=MyCardsDb;Trusted_Connection=True;MultipleActiveResultSets=true"), ServiceLifetime.Scoped);
 
             services.AddScoped<EfCoreCustomerRepository>();
             services.AddScoped<EfCoreCardRepository>();
