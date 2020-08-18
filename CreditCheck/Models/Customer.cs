@@ -19,12 +19,12 @@
 
         [Column("FirstName")]
         [Required]
-        [StringLength(15, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 3)]
+        [StringLength(15, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 2)]
         public string FirstName { get; set; }
 
         [Column("LastName")]
         [Required]
-        [StringLength(15, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 3)]
+        [StringLength(15, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 2)]
         public string LastName { get; set; }
 
         [Column("DateOfBirth")]
