@@ -3,6 +3,7 @@
     using CreditCheck.Common.Extensions;
     using CreditCheck.Data;
     using CreditCheck.Models;
+    using CreditCheck.Models.Shared;
     using Microsoft.AspNetCore.Mvc;
     using System;
     using System.Collections.Generic;
@@ -61,9 +62,6 @@
                 return BadRequest();
             }
 
-            entity.UpdatedOn = DateTime.Now;
-            entity.UpdatedBy = HttpContext.User.Identity.Name;
-
             await repository.Update(entity);
             return Ok(entity);
         }
@@ -85,9 +83,6 @@
                     customer.IsEligible = (customerCard != null) ? true : false;
                     customer.CardId = customerCard?.Id;
                 }
-
-                entity.CreatedOn = DateTime.Now;
-                entity.CreatedBy = "SYSTEM"; //HttpContext.User.Identity.Name;
                 await repository.Add(entity);
                 return CreatedAtAction("Get", new { id = entity.Id }, entity);
             }

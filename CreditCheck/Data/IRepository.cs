@@ -1,5 +1,6 @@
 ﻿namespace CreditCheck.Data
 {
+    using CreditCheck.Models.Shared;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 

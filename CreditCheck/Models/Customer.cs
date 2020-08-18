@@ -1,6 +1,6 @@
 ﻿namespace CreditCheck.Models
 {
-    using CreditCheck.Data;
+    using CreditCheck.Models.Shared;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

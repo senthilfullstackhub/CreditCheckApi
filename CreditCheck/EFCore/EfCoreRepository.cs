@@ -1,6 +1,7 @@
 ﻿namespace CreditCheck.EFCore
 {
     using CreditCheck.Data;
+    using CreditCheck.Models.Shared;
     using Microsoft.EntityFrameworkCore;
     using System;
     using System.Collections.Generic;

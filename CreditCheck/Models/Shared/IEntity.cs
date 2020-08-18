@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CreditCheck.Data
+namespace CreditCheck.Models.Shared
 {
     public interface IEntity
     {
