@@ -27,14 +27,34 @@
 
         public override int SaveChanges()
         {
+            CheckCustomerEligibility(); // For Customers
             AddAuitInfo();
             return base.SaveChanges();
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
+            CheckCustomerEligibility(); // For Customers
             AddAuitInfo();
             return (await base.SaveChangesAsync(true, cancellationToken));
+        }
+
+        private void CheckCustomerEligibility()
+        {
+            var entries = ChangeTracker.Entries().Where(x => x.Entity is IEntity && (x.State == EntityState.Added || x.State == EntityState.Modified));
+            foreach (var entry in entries)
+            {
+                if (entry.Entity.GetType() == typeof(Customer) && entry.State == EntityState.Added)
+                {
+                    // Validate customer pre-qualification check
+                    var customer = (Customer)Convert.ChangeType(entry.Entity, typeof(Customer));
+                    BLL.CustomerBLL.ValidateCustomer(customer, this);
+                }
+                else
+                {
+                    // Here add logic for update customer. 
+                }
+            }
         }
 
         private void AddAuitInfo()

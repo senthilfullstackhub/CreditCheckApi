@@ -74,15 +74,6 @@
         {
             if (ModelState.IsValid)
             {
-                if (entity.GetType() == typeof(Customer))
-                {
-                    var customer = (Customer)Convert.ChangeType(entity, typeof(Customer));
-                    var customerCard = this.context.Cards.Where(x => x.AgeLimit <= customer.DateOfBirth.ToGetAge()
-                                    && x.SalaryMin <= customer.Salary).OrderByDescending(o => o.SalaryMin).FirstOrDefault();
-
-                    customer.IsEligible = (customerCard != null) ? true : false;
-                    customer.CardId = customerCard?.Id;
-                }
                 await repository.Add(entity);
                 return CreatedAtAction("Get", new { id = entity.Id }, entity);
             }
